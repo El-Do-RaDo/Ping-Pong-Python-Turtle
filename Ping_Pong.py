@@ -8,3 +8,7 @@ win.title("Ping Pong")
 win.bgcolor("black")
 win.setup(width=800, height=600)
 win.tracer(0)
+
+#scoring
+score_a = 0  
+score_b = 0
