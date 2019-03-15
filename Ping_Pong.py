@@ -31,3 +31,13 @@ paddle_b.color("white")
 paddle_b.shapesize(stretch_wid=5, stretch_len=0.5)
 paddle_b.penup()
 paddle_b.goto(350,0)
+
+#Ball
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape("circle")
+ball.color("red")
+ball.penup()
+ball.goto(0,0)
+ball.dx = 0.3
+ball.dy = 0.3
