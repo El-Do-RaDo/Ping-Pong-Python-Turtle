@@ -50,3 +50,9 @@ pen.penup()
 pen.hideturtle()
 pen.goto(0,280)
 pen.write("Player A: 0   Player B: 0", align="center",font=("couruer", 10, "normal"))
+
+#function for moving the paddles 
+def paddle_a_up():
+	y = paddle_a.ycor()
+	y += 40
+	paddle_a.sety(y)
