@@ -56,3 +56,8 @@ def paddle_a_up():
 	y = paddle_a.ycor()
 	y += 40
 	paddle_a.sety(y)
+
+def paddle_a_down():
+	y = paddle_a.ycor()
+	y -= 40
+	paddle_a.sety(y)
