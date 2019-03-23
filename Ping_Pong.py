@@ -71,3 +71,10 @@ def paddle_b_down():
 	y = paddle_b.ycor()
 	y -= 40
 	paddle_b.sety(y)
+
+#keyboard binding to the game
+win.listen()
+win.onkeypress(paddle_a_up, "w")
+win.onkeypress(paddle_a_down, "s")
+win.onkeypress(paddle_b_up, "Up")
+win.onkeypress(paddle_b_down, "Down")
