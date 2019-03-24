@@ -78,3 +78,11 @@ win.onkeypress(paddle_a_up, "w")
 win.onkeypress(paddle_a_down, "s")
 win.onkeypress(paddle_b_up, "Up")
 win.onkeypress(paddle_b_down, "Down")
+
+#game loop
+while True:
+	win.update()
+	
+	# move the ball
+	ball.setx(ball.xcor() + ball.dx)
+	ball.sety(ball.ycor() + ball.dy)
