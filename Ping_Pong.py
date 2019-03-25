@@ -86,3 +86,9 @@ while True:
 	# move the ball
 	ball.setx(ball.xcor() + ball.dx)
 	ball.sety(ball.ycor() + ball.dy)
+
+	#Border bouncing is done through this
+	if ball.ycor() > 295:
+		ball.sety(295)
+		ball.dy *= -1
+		os.system("aplay bounce.wav&")
