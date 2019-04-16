@@ -49,7 +49,7 @@ pen.color("green")
 pen.penup()
 pen.hideturtle()
 pen.goto(0,280)
-pen.write("Player A: 0   Player B: 0", align="center",font=("couruer", 10, "normal"))
+pen.write("Player A: 0   Player B: 0", align="center",font=("couruer", 10, "normal")) 
 
 #function for moving the paddles 
 def paddle_a_up():
@@ -86,9 +86,41 @@ while True:
 	# move the ball
 	ball.setx(ball.xcor() + ball.dx)
 	ball.sety(ball.ycor() + ball.dy)
-
+	
 	#Border bouncing is done through this
 	if ball.ycor() > 295:
 		ball.sety(295)
 		ball.dy *= -1
+		os.system("aplay bounce.wav&")
+	
+	if ball.ycor() < -295:
+		ball.sety(-295)
+		ball.dy *= -1
+		os.system("aplay bounce.wav&")
+	
+	if ball.xcor() > 395:
+		ball.goto(0,0)
+		ball.dx *= -1
+		score_a += 1
+		pen.clear()
+		pen.write("Player A: %d   Player B: %d" %(score_a, score_b), align="center",font=("couruer", 10, "normal"))
+		os.system("aplay bounce.wav&")
+	
+	if ball.xcor() < -395:
+		ball.goto(0,0)
+		ball.dx *= -1
+		score_b += 1
+		pen.clear()
+		pen.write("Player A: %d   Player B: %d" %(score_a, score_b), align="center",font=("couruer", 10, "normal"))
+		os.system("aplay bounce.wav&")
+	
+	#ball bouncing the paddles
+	if (ball.xcor() > 340 and ball.xcor() <350)and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
+		ball.setx(340)
+		ball.dx *= -1
+		os.system("aplay bounce.wav&")
+	
+	if (ball.xcor() < -340 and ball.xcor() > -350)and (ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
+		ball.setx(-340)
+		ball.dx *= -1
 		os.system("aplay bounce.wav&")
